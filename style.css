@@ -1,0 +1,165 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab:wght@500&display=swap');
+
+:root {
+    --light-pink: #FFCCD2;
+    --peach: #FFEDED;
+    --light-brown: #B3541E;
+    --dark-brown: #362222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Slab', serif;
+}
+
+html, body {
+    height: 100%;
+    background-color: aliceblue;
+
+}
+
+.container {
+    display: flex;
+    position: relative;
+    height: 100%;
+}
+
+.sidebar {
+    flex: 1;
+    background-color: rgb(0, 0, 0);
+
+}
+
+.sidebar-item {
+    margin-top: 400px;
+}
+
+.content {
+    flex: 7.5;
+}
+
+.content-header {
+    display: flex;
+    position: relative;
+}
+
+h1 {
+    padding-top: 5px;
+}
+
+.icon-phone {
+    height: 20px;
+}
+
+.icon-medic {
+    margin-right: 20px;
+    height: 50px;
+}
+
+.title-image {
+    margin: 50px 0 20px 100px;
+}
+
+.title-image p {
+    color: var(--light-brown);
+    font-size: 3em;
+}
+
+.image-container {
+    border: 5px solid var(--dark-brown);
+    margin: 0 550px 0 100px;
+    padding: 10px;
+}
+
+.image-display {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 6px;
+}
+
+.image-list-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-list {
+    height: 180px;
+    width: 270px;
+}
+
+header {
+    padding: 20px 40px;
+    background-color: var(--light-pink);
+}
+
+a {
+    text-decoration: none;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    --c: var(--peach);
+    color: var(--c);
+    font-size: 16px;
+    border: 0.3em solid var(--c);
+    border-radius: 0.5em;
+    width: 12em;
+    height: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    margin: 1em;
+}
+
+nav ul li span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: var(--c);
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+}
+
+nav ul li:hover {
+    color: black;
+}
+
+nav ul li:hover span {
+    transform: translateY(0) scale(2);
+}
+
+nav ul li span:nth-child(1) {
+    --n: 1;
+}
+
+nav ul li span:nth-child(2) {
+    --n: 2;
+}
+
+nav ul li span:nth-child(3) {
+    --n: 3;
+}
+
+nav ul li span:nth-child(4) {
+    --n: 4;
+}
