@@ -24,7 +24,7 @@ html, body {
 
 .container {
     display: flex;
-    position: relative;
+    /* position: relative; */
     height: 100%;
 }
 
@@ -35,11 +35,11 @@ html, body {
 }
 
 .sidebar-item {
-    margin-top: 400px;
+    margin-top: 200px;
 }
 
 .content {
-    flex: 7.5;
+    flex: 8;
 }
 
 .content-header {
@@ -61,12 +61,12 @@ h1 {
 }
 
 .title-image {
-    margin: 50px 0 20px 100px;
+    margin: 20px 0 20px 100px;
 }
 
 .title-image p {
     color: var(--light-brown);
-    font-size: 3em;
+    font-size: 1.8em;
 }
 
 .image-container {
@@ -76,7 +76,7 @@ h1 {
 }
 
 .image-display {
-    height: 400px;
+    height: 300px;
     width: 100%;
     margin-bottom: 6px;
 }
@@ -87,8 +87,8 @@ h1 {
 }
 
 .image-list {
-    height: 180px;
-    width: 270px;
+    height: 90px;
+    width: 140px;
 }
 
 header {
@@ -109,10 +109,10 @@ nav ul {
 nav ul li {
     --c: var(--peach);
     color: var(--c);
-    font-size: 16px;
+    font-size: 14px;
     border: 0.3em solid var(--c);
     border-radius: 0.5em;
-    width: 12em;
+    width: 10em;
     height: 3em;
     text-transform: uppercase;
     font-weight: bold;
