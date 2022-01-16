@@ -1,0 +1,153 @@
+<body>
+    <html>
+
+    <style>
+        * {
+
+            font-family: sans-serif;
+        }
+
+        button {
+
+            background-color: #A3AFA7;
+        }
+    </style>
+
+
+
+
+    <table bgcolor=#f8e8ea style="margin:auto; width: 500px;; height: 500px; border: 5px solid #B3541E;" class="center">
+
+        <tr>
+            <th colspan="5"
+                style="background-color: #ffccd2;text-align:center; font-weight:bold ;border-bottom: 2px solid #ffccd2; color:#000000; padding-bottom: 10px; padding-top: 10px; ">
+                REGISTERATION
+            </th>
+        </tr>
+        <tr>
+        </tr>
+
+        <form name="register" action="/action_page.php" onsubmit="return validateForm()" method="post" required>
+            <tr>
+                <td style="color:#000000; padding-left: 20px ;font-weight:bolder;">NAME :</td>
+                <td><input type="text" id="name" name="name" /></td>
+            </tr>
+
+            <tr>
+                <td style="color:#000000; padding-left: 20px ;font-weight:bold;">
+                    AGE :</td>
+                <td><input type="number" id="age" name="age" />
+                </td>
+            </tr>
+
+            <tr>
+
+                <td style="color:#0c0c0c; padding-left: 20px;font-weight:bold;">
+                    <p1>GENDER :</p1>
+                </td>
+                <td style="color: #B3541E;font-weight:bold;">
+                    <input type="radio" id="gender_male" value="Male" />Male
+                    <input type="radio" id="gender_female" value="Female" />Female<br />
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color:#000000; padding-left: 20px;font-weight:bold;">
+                    <p1>WARD TYPE :</p1>
+                </td>
+                <td style="color: #B3541E;font-weight:bold;">
+                    <input type="radio" id="ward_silver" value="Silver" /> Silver<br />
+                    <input type="radio" id="ward_gold" value="Gold" /> Gold<br />
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td style="color:#000000; padding-left: 20px;font-weight:bold;">
+                    <p2>DAY TO CHECK IN: </p2>
+                </td>
+
+                <td>
+                    <select>
+                        <option value="Sunday"> Sunday</option>
+                        <option value="Monday"> Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday"> Wednesday</option>
+                        <option value="Thursday"> Thursday</option>
+                        <option value="Friday"> Friday</option>
+                        <option value="Saturday"> Saturday</option>
+                        
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td style="padding-bottom: 10px; padding-top:5px;">
+                    <input type="RESET" value="RESET"
+                        style="background-color:#ffccd2; color:#000000 ; border:#000000 0; width: 70px; height: 30px; border-style:solid; border-width: 3px;font-weight:bold;">
+                    <input type="SUBMIT" value="SUBMIT"
+                        style="background-color:#ffccd2; color:#000000  ;border: #000000 0; width: 70px; height: 30px; border-style:solid; border-width: 3px;font-weight:bold;">
+                    <button type=button onclick="window.location.href='index.html'"
+                        style=" background-color:#ffccd2; color:#000000 ;border: #000000 0; width: 70px; height: 30px;border-style:solid; border-width: 3px;font-weight:bold;">
+                        BACK </button>
+                </td>
+            </tr>
+
+    </table>
+
+
+
+
+    </form>
+
+
+    <script>
+        function validateForm() {
+
+            var x = document.forms["register"]["Name"].value;
+            var letters = /^[A-Za-z]+$/;
+            var y = document.forms["register"]["StudentID"].value;
+
+            if (x == "" || x == null) {
+                alert("Name must be filled out");
+                return false;
+            }
+            if (y == "" || y == null) {
+                alert("ID must be filled out");
+                return false;
+            }
+            if (!/^[a-zA-Z]+$/.test(x)) {
+
+
+                alert("Name must only have letters!");
+                return false;
+            }
+            if (!/^[0-9]+$/.test(y)) {
+
+
+                alert("Student ID must only have numbers!");
+                return false;
+            }
+            if (document.getElementById('gender_male').checked == false && document.getElementById('gender_female').checked == false) {
+
+                alert("Please select a gender");
+                return false;
+            }
+            if (document.getElementById('skill_c').checked == false && document.getElementById('skill_j').checked == false && document.getElementById('skill_p').checked == false) {
+
+                alert("Please select at least one skill!");
+                return false;
+            }
+
+
+
+        }
+
+
+    </script>
+
+    </html>
+
+</body>
