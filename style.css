@@ -18,7 +18,8 @@
 
 html, body {
     height: 100%;
-    background-color: aliceblue;
+    background-color: rgb(199, 204, 209);
+    margin: 0 80px;
 
 }
 
@@ -29,7 +30,7 @@ html, body {
 .sidebar {
     height: 100%;
     position: fixed;
-    z-index: 90;
+    z-index: 10;
     float: left;
     width: 180px;
     background-color: rgb(0, 0, 0);
@@ -42,16 +43,15 @@ html, body {
 }
 
 .content {
+    /* height: auto; */
     margin-left: 180px;
+    background-color: rgb(234, 239, 245);
+
 }
 
 .content-header {
     display: flex;
     position: relative;
-}
-
-h1 {
-    padding-top: 5px;
 }
 
 .icon-phone {
@@ -63,11 +63,11 @@ h1 {
     height: 50px;
 }
 
-.title-image {
+.title-image, .title-location {
     margin: 20px 0 20px 100px;
 }
 
-.title-image p {
+p {
     color: var(--light-brown);
     font-size: 1.8em;
 }
@@ -76,11 +76,12 @@ h1 {
     border: 5px solid var(--dark-brown);
     margin: 0 550px 0 100px;
     padding: 10px;
+    width: 50em;
 }
 
 .image-display {
     height: 300px;
-    width: 100%;
+    width: 50em;
     margin-bottom: 6px;
 }
 
@@ -94,13 +95,82 @@ h1 {
     width: 140px;
 }
 
+.location-map {
+    width: 400px;
+    border: 5px solid var(--dark-brown);
+    margin: 20px 0 20px 100px;
+    padding: 20px;
+
+}
+
 header {
     padding: 20px 40px;
     background-color: var(--light-pink);
 }
 
+h1 {
+    padding-top: 5px;
+}
+
 a {
     text-decoration: none;
+}
+
+hr {
+    margin: 20px 40px;
+}
+
+
+.footer-bottom {
+    background: #000;
+    /* width: 100vw; */
+    padding: 20px;
+    /* padding-left: 200px; */
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    float: left;
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+    color: var(--light-pink);
+}
+
+.footer-bottom p a {
+    color: #44bae8;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.footer-bottom span {
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+
+.footer-menu {
+    float: right;
+
+}
+
+.footer-menu ul {
+    display: flex;
+}
+
+.footer-menu ul li {
+    padding-right: 10px;
+    display: block;
+}
+
+.footer-menu ul li a {
+    color: #cfd2d6;
+    text-decoration: none;
+}
+
+.footer-menu ul li a:hover {
+    color: #27bcda;
 }
 
 nav ul {
