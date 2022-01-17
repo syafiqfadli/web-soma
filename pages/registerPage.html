@@ -30,24 +30,24 @@
         <form name="register" action="/action_page.php" onsubmit="return validateForm()" method="post" required>
             <tr>
                 <td style="color:#000000; padding-left: 20px ;font-weight:bolder;">NAME :</td>
-                <td><input type="text" id="name" name="name" required/></td>
+                <td><input type="text" id="name" name="name" required /></td>
             </tr>
 
             <tr>
                 <td style="color:#000000; padding-left: 20px ;font-weight:bold;">
                     AGE :</td>
-                <td><input type="number" id="age" name="age" required/>
+                <td><input type="number" id="age" name="age" required />
                 </td>
             </tr>
 
             <tr>
 
-                <td style="color:#0c0c0c; padding-left: 20px;font-weight:bold;" >
+                <td style="color:#0c0c0c; padding-left: 20px;font-weight:bold;">
                     <p1>GENDER :</p1>
                 </td>
                 <td style="color: #B3541E;font-weight:bold;">
-                    <input type="radio" id="gender_male" value="Male" />Male
-                    <input type="radio" id="gender_female" value="Female" />Female<br />
+                    <input type="radio" id="gender_male" value="Male" name="gender" />Male
+                    <input type="radio" id="gender_female" value="Female" name="gender" />Female<br />
                 </td>
             </tr>
 
@@ -56,8 +56,8 @@
                     <p1>WARD TYPE :</p1>
                 </td>
                 <td style="color: #B3541E;font-weight:bold;">
-                    <input type="radio" id="ward_silver" value="Silver" /> Silver<br />
-                    <input type="radio" id="ward_gold" value="Gold" /> Gold<br />
+                    <input type="radio" id="ward_silver" value="Silver" name="ward"/> Silver<br />
+                    <input type="radio" id="ward_gold" value="Gold" name="ward"/> Gold<br />
                 </td>
             </tr>
 
@@ -68,7 +68,7 @@
                     <p2>DATE TO CHECK IN: </p2>
                 </td>
                 <td>
-                <input type="date" id="date" required>
+                    <input type="date" id="date" required>
                 </td>
             </tr>
 
@@ -78,7 +78,7 @@
                     <input type="RESET" value="RESET"
                         style="background-color:#ffccd2; color:#000000 ; border:#000000 0; width: 70px; height: 30px; border-style:solid; border-width: 3px;font-weight:bold;">
                     <button type="SUBMIT" onclick="validateForm()"
-                       style="background-color:#ffccd2; color:#000000  ;border: #000000 0; width: 70px; height: 30px; border-style:solid; border-width: 3px;font-weight:bold;">
+                        style="background-color:#ffccd2; color:#000000  ;border: #000000 0; width: 70px; height: 30px; border-style:solid; border-width: 3px;font-weight:bold;">
                         SUBMIT </button>
                     <button type=button onclick="window.location.href='../index.html'"
                         style=" background-color:#ffccd2; color:#000000 ;border: #000000 0; width: 70px; height: 30px;border-style:solid; border-width: 3px;font-weight:bold;">
@@ -132,7 +132,18 @@
                 return false;
             }
 
+            function checkOnlyOne(radio) {
+                var gender = document.getElementsByName('gender')
+                var ward = document.getElementsByName('ward')
 
+                gender.forEach((item) => {
+                    if (item !== radio) item.checked = false
+                })
+
+                gender.forEach((item) => {
+                    if (item !== radio) item.checked = false
+                })
+            }
 
         }
 
