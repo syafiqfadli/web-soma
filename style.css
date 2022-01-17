@@ -72,6 +72,25 @@ p {
     font-size: 1.8em;
 }
 
+.extra-info-container {
+    margin-left: 100px;
+}
+
+.extra-info-container p {
+    color: red;
+    font-size: 1.2em;
+
+}
+
+.extra-info-container li {
+    font-size: 0.9em;
+
+}
+
+.extra-info-container div {
+    margin-bottom: 20px;
+}
+
 .image-container {
     border: 5px solid var(--dark-brown);
     margin: 0 550px 0 100px;
@@ -131,7 +150,7 @@ hr {
 }
 
 .footer-bottom p {
-    float: left;
+    float: right;
     font-size: 14px;
     word-spacing: 2px;
     text-transform: capitalize;
@@ -148,29 +167,6 @@ hr {
     text-transform: uppercase;
     opacity: .4;
     font-weight: 200;
-}
-
-.footer-menu {
-    float: right;
-
-}
-
-.footer-menu ul {
-    display: flex;
-}
-
-.footer-menu ul li {
-    padding-right: 10px;
-    display: block;
-}
-
-.footer-menu ul li a {
-    color: #cfd2d6;
-    text-decoration: none;
-}
-
-.footer-menu ul li a:hover {
-    color: #27bcda;
 }
 
 nav ul {
