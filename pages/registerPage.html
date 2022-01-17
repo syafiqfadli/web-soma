@@ -30,19 +30,19 @@
         <form name="register" action="/action_page.php" onsubmit="return validateForm()" method="post" required>
             <tr>
                 <td style="color:#000000; padding-left: 20px ;font-weight:bolder;">NAME :</td>
-                <td><input type="text" id="name" name="name" /></td>
+                <td><input type="text" id="name" name="name" required/></td>
             </tr>
 
             <tr>
                 <td style="color:#000000; padding-left: 20px ;font-weight:bold;">
                     AGE :</td>
-                <td><input type="number" id="age" name="age" />
+                <td><input type="number" id="age" name="age" required/>
                 </td>
             </tr>
 
             <tr>
 
-                <td style="color:#0c0c0c; padding-left: 20px;font-weight:bold;">
+                <td style="color:#0c0c0c; padding-left: 20px;font-weight:bold;" >
                     <p1>GENDER :</p1>
                 </td>
                 <td style="color: #B3541E;font-weight:bold;">
@@ -68,7 +68,7 @@
                     <p2>DATE TO CHECK IN: </p2>
                 </td>
                 <td>
-                <input type="date" id="date">
+                <input type="date" id="date" required>
                 </td>
             </tr>
 
@@ -77,8 +77,9 @@
                 <td style="padding-bottom: 10px; padding-top:5px;">
                     <input type="RESET" value="RESET"
                         style="background-color:#ffccd2; color:#000000 ; border:#000000 0; width: 70px; height: 30px; border-style:solid; border-width: 3px;font-weight:bold;">
-                    <input type="SUBMIT" value="SUBMIT"
-                        style="background-color:#ffccd2; color:#000000  ;border: #000000 0; width: 70px; height: 30px; border-style:solid; border-width: 3px;font-weight:bold;">
+                    <button type="SUBMIT" onclick="validateForm()"
+                       style="background-color:#ffccd2; color:#000000  ;border: #000000 0; width: 70px; height: 30px; border-style:solid; border-width: 3px;font-weight:bold;">
+                        SUBMIT </button>
                     <button type=button onclick="window.location.href='../index.html'"
                         style=" background-color:#ffccd2; color:#000000 ;border: #000000 0; width: 70px; height: 30px;border-style:solid; border-width: 3px;font-weight:bold;">
                         BACK </button>
