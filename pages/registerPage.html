@@ -41,7 +41,7 @@
         <tr>
         </tr>
 
-        <form name="register" action="/action_page.php" onsubmit="return validateForm()" method="post" required>
+        <form name="register" action="/action_page.php"  method="post" required onsubmit="return validateForm()">
             <tr>
                 <td>
                     <p class="note">Fields marked with * are required.</p>
@@ -87,7 +87,7 @@
                     <p2>DATE TO CHECK IN: *</p2>
                 </td>
                 <td>
-                    <input type="date" id="date">
+                    <input type="date" id="date" name="date">
                 </td>
             </tr>
 
@@ -130,11 +130,11 @@
                 alert("Age must be filled out");
                 return false;
             }
-            if (!letters.test(x)) {
+            if (!letters.test(name)) {
                 alert("Name must only have letters");
                 return false;
             }
-            if (!numbers.test(y)) {
+            if (!numbers.test(age)) {
 
                 alert("Age must only have numbers");
                 return false;
@@ -144,11 +144,14 @@
                 alert("Please select a gender");
                 return false;
             }
-            if (document.getElementById('skill_c').checked == false && document.getElementById('skill_j').checked == false && document.getElementById('skill_p').checked == false) {
+            if (document.getElementById('ward_silver').checked == false && document.getElementById('ward_gold').checked == false) {
 
                 alert("Please select a ward");
                 return false;
             }
+
+            else
+                alert("Submitted");
 
         }
 
