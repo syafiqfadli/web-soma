@@ -114,6 +114,11 @@ p {
     width: 140px;
 }
 
+.image-list2 {
+    height: 180px;
+    width: 280px;
+}
+
 .location-map {
     width: 400px;
     border: 5px solid var(--dark-brown);

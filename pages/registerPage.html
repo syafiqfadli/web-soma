@@ -30,7 +30,7 @@
 
 
 
-    <table bgcolor=#f8e8ea style="margin:auto; width: 500px;; height: 500px; border: 5px solid #B3541E;" class="center">
+    <table bgcolor=#f8e8ea style="margin:auto; width: 700px;; height: 1000px; border: 5px solid #B3541E;" class="center">
 
         <tr>
             <th colspan="5"
@@ -47,26 +47,73 @@
                     <p class="note">Fields marked with * are required.</p>
                 </td>
             </tr>
+
             <tr>
-                <td style="color:#000000; padding-left: 20px ;font-weight:bolder;">NAME : *</td>
-                <td><input type="text" id="name" name="name" placeholder="Name" /></td>
+                <td style="color:#000000; padding-left: 20px ;font-weight:bolder;">STAFF ID : *</td>
+                <td><input type="text" id="patient_id" name="age" placeholder="Patient ID" /></td>
             </tr>
 
             <tr>
-                <td style="color:#000000; padding-left: 20px ;font-weight:bold;">
-                    AGE : *</td>
-                <td><input type="text" id="age" name="age" placeholder="Age" />
-                </td>
+                <td style="color:#000000; padding-left: 20px ;font-weight:bolder;">PATIENT ID : *</td>
+                <td><input type="text" id="staff_id" name="age" placeholder="Patient ID" /></td>
             </tr>
 
             <tr>
+                <td style="color:#000000; padding-left: 20px ;font-weight:bolder;">FIRST NAME : *</td>
+                <td><input type="text" id="first_name" name="name" placeholder="First Name" /></td>
+            </tr>
 
+            <tr>
+                <td style="color:#000000; padding-left: 20px ;font-weight:bolder;">LAST NAME : *</td>
+                <td><input type="text" id="last_name" name="name" placeholder="Last Name" /></td>
+            </tr>
+
+            <tr>
                 <td style="color:#0c0c0c; padding-left: 20px;font-weight:bold;">
                     <p1>GENDER : *</p1>
                 </td>
                 <td style="color: #B3541E;font-weight:bold;">
                     <input type="radio" id="gender_male" value="Male" name="gender" />Male
                     <input type="radio" id="gender_female" value="Female" name="gender" />Female<br />
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color:#000000; padding-left: 20px;font-weight:bold;">
+                    <p2>BIRTH DATE: *</p2>
+                </td>
+                <td>
+                    <input type="date" id="birth_date" name="date">
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color:#000000; padding-left: 20px ;font-weight:bold;">CONTACT NO : *</td>
+                <td><input type="text" id="Contact_no" name="age" placeholder="Contact Number" />
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color:#000000; padding-left: 20px ;font-weight:bolder;">ADDRESS : *</td>
+                <td><input type="text" id="address" name="name" placeholder="Address" /></td>
+            </tr>
+
+            <tr>
+                <td style="color:#000000; padding-left: 20px ;font-weight:bolder;">WARD ID : *</td>
+                <td><input type="text" id="ward_id" name="age" placeholder="Ward ID" /></td>
+            </tr>
+
+            <tr>
+                <td style="color:#000000; padding-left: 20px ;font-weight:bold;">DISEASE ID : *</td>
+                <td><select type="text" id="disease_id" name="age" placeholder="Disease ID" >
+                    
+                        <option value="Epilepsy"> SZR1</option> 
+                        <option value="Alzheimer"> ND1</option>  
+                        <option value="Parkinson"> ND2</option>  
+                        <option value="Stroke"> CV1</option>  
+                        <option value="Multiple sclerosis"> DE1</option> 
+                     </select>       
+                      
                 </td>
             </tr>
 
