@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration</title>
+</head>
+
+<body>
+    <style>
+        * {
+
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: rgb(199, 204, 209);
+        }
+
+        button {
+
+            background-color: #A3AFA7;
+        }
+
+        .note {
+            margin-left: 20px;
+            color: red;
+            font-size: 13px;
+        }
+    </style>
+
+
+
+
+    <table bgcolor=#f8e8ea style="margin:auto; width: 700px;; height: 1000px; border: 5px solid #B3541E;" class="center">
+
+        <tr>
+            <th colspan="5"
+                style="font-size: 30px ;background-color: #ffccd2;text-align:center; font-weight:bold ;border-bottom: 2px solid #ffccd2; color:#000000;">
+                PATIENT REGISTRATION FORM
+            </th>
+        </tr>
+        <tr>
+        </tr>
+
+        <form name="register" action="/action_page.php"  method="post" required onsubmit="return validateForm()">
+            <tr>
+                <td>
+                    <p class="note">Fields marked with * are required.</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color:#000000; padding-left: 60px ;font-weight:bolder;">PATIENT ID : *</td>
+                <td><input type="text" id="patient_id" name="age" placeholder="Patient ID" /></td>
+            </tr>
+
+            <tr>
+                <td style="color:#000000; padding-left: 60px ;font-weight:bolder;">FIRST NAME : *</td>
+                <td><input style="width: 400px;" type="text" id="first_name" name="name" placeholder="First Name" /></td>
+            </tr>
+
+            <tr>
+                <td style="color:#000000; padding-left: 60px ;font-weight:bolder;">LAST NAME : *</td>
+                <td><input style="width: 400px;" type="text" id="last_name" name="name" placeholder="Last Name" /></td>
+            </tr>
+
+            <tr>
+                <td style="color:#0c0c0c; padding-left: 60px;font-weight:bold;">
+                    <p1>GENDER : *</p1>
+                </td>
+                <td style="color: #B3541E;font-weight:bold;">
+                    <input type="radio" id="gender_male" value="Male" name="gender" />Male
+                    <input type="radio" id="gender_female" value="Female" name="gender" />Female<br />
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color:#000000; padding-left: 60px;font-weight:bold;">
+                    <p2>BIRTH DATE: *</p2>
+                </td>
+                <td>
+                    <input type="date" id="birth_date" name="date">
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color:#000000; padding-left: 60px ;font-weight:bold;">CONTACT NO : *</td>
+                <td><input type="text" id="Contact_no" name="age" placeholder="Contact Number" />
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color:#000000; padding-left: 60px ;font-weight:bolder;">ADDRESS : *</td>
+                <td><input style="width: 400px;" type="text" id="address" name="name" placeholder="Address" /></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td style="padding-bottom: 10px; padding-top:5px;">
+                    <input type="RESET" value="RESET"
+                        style="background-color:#ffccd2; color:#000000 ; border:#000000 0; width: 70px; height: 30px; border-style:solid; border-width: 3px;font-weight:bold;">
+                    <button type="SUBMIT" onclick="validateForm()"
+                        style="background-color:#ffccd2; color:#000000  ;border: #000000 0; width: 70px; height: 30px; border-style:solid; border-width: 3px;font-weight:bold;">
+                        SUBMIT </button>
+                    <button type=button onclick="window.location.href='registerPage.html'"
+                        style=" background-color:#ffccd2; color:#000000 ;border: #000000 0; width: 70px; height: 30px;border-style:solid; border-width: 3px;font-weight:bold;">
+                        BACK </button>
+                </td>
+            </tr>
+
+    </table>
+
+
+
+
+    </form>
+
+
+    <script>
+        function validateForm() {
+
+            var name = document.forms['register']['name'].value;
+            var age = document.forms['register']['age'].value;
+            var letters = /^[A-Za-z]+$/;
+            var numbers = /^[0-9]+$/;
+
+
+            if (name == "" || name == null) {
+                alert("Name must be filled out");
+                return false;
+            }
+            if (age == "" || age == null) {
+                alert("Age must be filled out");
+                return false;
+            }
+            if (!letters.test(name)) {
+                alert("Name must only have letters");
+                return false;
+            }
+            if (!numbers.test(age)) {
+
+                alert("Age must only have numbers");
+                return false;
+            }
+            if (document.getElementById('gender_male').checked == false && document.getElementById('gender_female').checked == false) {
+
+                alert("Please select a gender");
+                return false;
+            }
+            if (document.getElementById('ward_silver').checked == false && document.getElementById('ward_gold').checked == false) {
+
+                alert("Please select a ward");
+                return false;
+            }
+
+            else
+                alert("Submitted");
+
+        }
+
+
+        function checkOnlyOne(radio) {
+            var gender = document.getElementsByName('gender')
+            var ward = document.getElementsByName('ward')
+
+            gender.forEach((item) => {
+                if (item !== radio) item.checked = false
+            })
+
+            ward.forEach((item) => {
+                if (item !== radio) item.checked = false
+            })
+        }
+
+    </script>
+</body>
+
+</html>
