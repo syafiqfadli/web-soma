@@ -5,88 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Staff Registration</title>
+    <title>Insert Patient</title>
 </head>
 
 <body>
-    <%
-   String isbn = request.getParameter("isbn");
-   String title = request.getParameter("title");
-   String bookyear = request.getParameter("bookyear");
-   String purchaseprice = request.getParameter("purchaseprice");
-   String saleprice = request.getParameter("saleprice");
-   //out.println(title);
-  
-  
-    String dbUser = "ISKANDAR";
-    String dbPasswd = "iskandar";
-    //String dbURL = "jdbc:oracle:thin:@sid3.comp.nus.edu.sg:1521:sid3";
-    String dbURL = "jdbc:oracle:thin:@fsktmdbora.upm.edu.my:1521:FSKTM";
-  
-  Connection con=null;
-  ResultSet rst=null;
-  PreparedStatement pstatement=null;
-  
-     Class.forName("oracle.jdbc.driver.OracleDriver");
-     int updateQuery = 0;
-     
-        // check if the text box is empty
-   if(isbn!=null && title!=null && bookyear!=null && purchaseprice!=null && saleprice!=null){
-        // check if the text box having only blank spaces
-       if(isbn!="" && title!="" && bookyear!="" && purchaseprice!="" && saleprice!="") {
-           try {
-              
-              con=DriverManager.getConnection(dbURL,dbUser,dbPasswd);
-              String queryString = "INSERT INTO book(isbn, title,bookyear,purchaseprice, saleprice) VALUES (?, ?, ?, ?, ?)";
-                      
-              //pstatement = con.prepareStatement(queryString);
-              pstatement = con.prepareStatement(queryString);
-              pstatement.setString(1, isbn);
-              pstatement.setString(2, title);
-        pstatement.setString(3, bookyear);
-        pstatement.setString(4, purchaseprice);
-        pstatement.setString(5, saleprice);
-        
-              updateQuery = pstatement.executeUpdate();
-                            if (updateQuery != 0) { %>
-             <br>
-             <TABLE style="background-color: #E3E4FA;" WIDTH="30%" border="1">
-          <tr><th>Data is inserted successfully in database.</th></tr>
-          
-       </table>
-       
-       <br><a href="index.jsp">Home</a> <br>
-       <br><a href="viewdatabase2.jsp">View All Books</a> <br>
-      <br><a href="viewdatabase.jsp">View Books by Title</a> <br>
-      <a href="insert.html">Insert New Records</a><br>
-      <a href="update.jsp">Update Book Detail</a><br>
-      <a href="delete.jsp">Update Book Detail</a><br>
-      <a href="delete.jsp">Delete Book </a>
-              <%
-              }
-            } 
-            catch (Exception ex) {
-            //out.println("Unable to connect to batabase.");
-            %><TABLE style="background-color: #E3E4FA;" WIDTH="30%" border="1">
-          <tr><th>data insert failed.</th></tr>
-          
-       </table>
-       <br><a href="index.jsp">Home</a> <br>
-       <br><a href="viewdatabase2.jsp">View All Books</a> <br>
-      <br><a href="viewdatabase.jsp">View Books by Title</a> <br>
-      <a href="insert.html">Insert New Records</a><br>
-      <a href="update.jsp">Update Book Detail</a><br>
-      <a href="delete.jsp">Update Book Detail</a><br>
-      <a href="delete.jsp">Delete Book </a><%
-               }
-            finally {
-                // close all the connections.
-                pstatement.close();
-                con.close();
-            }
-    }
-  }
-%>
     <style>
         * {
 
@@ -112,12 +34,12 @@
 
 
 
-    <table bgcolor=#f8e8ea style="margin:auto; width: 700px; height: 1000px; border: 5px solid #B3541E;" class="center">
+    <table bgcolor=#f8e8ea style="margin:auto; width: 700px;; height: 1000px; border: 5px solid #B3541E;" class="center">
 
         <tr>
             <th colspan="5"
-                style="font-size: 30px ;background-color: #ffccd2;text-align:center; font-weight:bold ;border-bottom: 2px solid #ffccd2; color:#000000; ">
-                STAFF REGISTRATION FORM
+                style="font-size: 30px ;background-color: #ffccd2;text-align:center; font-weight:bold ;border-bottom: 2px solid #ffccd2; color:#000000;">
+                INSERT NEW PATIENT
             </th>
         </tr>
         <tr>
@@ -131,8 +53,8 @@
             </tr>
 
             <tr>
-                <td style="color:#000000; padding-left: 60px ;font-weight:bolder;">STAFF ID : *</td>
-                <td><input type="text" id="staff_id" name="age" placeholder="Staff ID" /></td>
+                <td style="color:#000000; padding-left: 60px ;font-weight:bolder;">PATIENT ID : *</td>
+                <td><input type="text" id="patient_id" name="age" placeholder="Patient ID" /></td>
             </tr>
 
             <tr>
@@ -146,6 +68,36 @@
             </tr>
 
             <tr>
+                <td style="color:#0c0c0c; padding-left: 60px;font-weight:bold;">
+                    <p1>GENDER : *</p1>
+                </td>
+                <td style="color: #B3541E;font-weight:bold;">
+                    <input type="radio" id="gender_male" value="Male" name="gender" />Male
+                    <input type="radio" id="gender_female" value="Female" name="gender" />Female<br />
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color:#000000; padding-left: 60px;font-weight:bold;">
+                    <p2>BIRTH DATE: *</p2>
+                </td>
+                <td>
+                    <input type="date" id="birth_date" name="date">
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color:#000000; padding-left: 60px ;font-weight:bold;">CONTACT NO : *</td>
+                <td><input type="text" id="Contact_no" name="age" placeholder="Contact Number" />
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color:#000000; padding-left: 60px ;font-weight:bolder;">ADDRESS : *</td>
+                <td><input style="width: 400px;" type="text" id="address" name="name" placeholder="Address" /></td>
+            </tr>
+
+            <tr>
                 <td></td>
                 <td style="padding-bottom: 10px; padding-top:5px;">
                     <input type="RESET" value="RESET"
@@ -153,7 +105,7 @@
                     <button type="SUBMIT" onclick="validateForm()"
                         style="background-color:#ffccd2; color:#000000  ;border: #000000 0; width: 70px; height: 30px; border-style:solid; border-width: 3px;font-weight:bold;">
                         SUBMIT </button>
-                    <button type=button onclick="window.location.href='registerPage.html'"
+                    <button type=button onclick="window.location.href='patientRegister.html'"
                         style=" background-color:#ffccd2; color:#000000 ;border: #000000 0; width: 70px; height: 30px;border-style:solid; border-width: 3px;font-weight:bold;">
                         BACK </button>
                 </td>
