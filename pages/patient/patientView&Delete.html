@@ -1,56 +1,212 @@
-<%@ page language="java" import="java.sql.*" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Table</title>
-    <script type="text/javascript">
-        function confirm_delete() {
-            return confirm('Are you sure?')
-            //return confirm('are you sure you want to delete');
-        }
-        
-        </script>
-</head>
-<%
-String staff_id = request.getParameter("staff_id");
-String dbUser = "c208327";
-String dbPasswd = "208327";
-String dbURL = "jdbc:oracle:thin:@fsktmdbora.upm.edu.my:1521:FSKTM";
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-try {
-    /*Class.forName(driver);*/
-    Class.forName("oracle.jdbc.driver.OracleDriver");
-    } catch (ClassNotFoundException e) {
-    e.printStackTrace();
-    }
-    Connection connection = null;
-    Statement statement = null;
-    ResultSet resultSet = null;
- %>
-<body>
     <style>
         * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
 
+        body,
+        html {
+            height: 100%;
             font-family: sans-serif;
+            background: #ffccd2;
         }
 
-        body {
-            background-color: rgb(199, 204, 209);
+
+        .container-table {
+            width: 100%;
+
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 33px 30px;
         }
 
-        button {
-
-            background-color: #A3AFA7;
+        .wrap-table {
+            width: 1170px;
         }
 
-        .note {
-            margin-left: 20px;
-            color: red;
-            font-size: 13px;
+        table {
+            border-spacing: 1;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        table * {
+            position: relative;
+        }
+
+
+        table thead tr {
+            background: #36304a;
+        }
+
+        table tbody tr {
+            height: 50px;
+        }
+
+        table tbody tr:last-child {
+            border: 0;
+        }
+
+        table td,
+        table th {
+            text-align: left;
+        }
+
+
+
+        .table-head th {
+            font-family: OpenSans-Regular;
+            font-size: 18px;
+            color: #fff;
+            line-height: 1.2;
+            font-weight: unset;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        tbody tr {
+            font-family: OpenSans-Regular;
+            font-size: 15px;
+            color: #808080;
+            line-height: 1.2;
+            font-weight: unset;
+        }
+
+        tbody tr:hover {
+            color: #555555;
+            background-color: #badafc;
+            cursor: pointer;
+        }
+
+        .column1 {
+            width: 100px;
+            padding: 0 40px;
+        }
+
+        .column2 {
+            padding: 20px;
+            width: 150px;
+        }
+
+        .column3 {
+            padding: 20px;
+            width: 150px;
+        }
+
+        .column4 {
+            padding: 20px;
+            width: 150px;
+        }
+
+        .column5 {
+            padding-right: 20px;
+            width: 100px;
+        }
+
+        .column6 {
+            width: 120px;
+        }
+
+        .column7 {
+            width: 120px;
+        }
+
+        .column8 {
+            padding: 10px 20px;
+            width: 170px;
         }
     </style>
+</head>
+
+<body>
+    <div>
+        <p style="text-align: center; color: black; font-size: 30px; margin-top: 30px;">PATIENT TABLE</p>
+    </div>
+    <div class="limiter">
+        <div class="container-table">
+            <div class="wrap-table">
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr class="table-head">
+                                <th class="column1">No.</th>
+                                <th class="column2">Patient ID</th>
+                                <th class="column3">First Name</th>
+                                <th class="column4">Last Name</th>
+                                <th class="column5">Gender</th>
+                                <th class="column6">Birth Date</th>
+                                <th class="column7">Contact No.</th>
+                                <th class="column8">Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="column1">1</td>
+                                <td class="column2">200398</td>
+                                <td class="column3">Ahmad</td>
+                                <td class="column4">Kassim</td>
+                                <td class="column5">Male</td>
+                                <td class="column6">23/4/2091</td>
+                                <td class="column7">0146985321</td>
+                                <td class="column8">Sungai Buloh taman hang tuah jaya di melaka sleatan mencuba menjadi
+                                    sesuatu</td>
+                            </tr>
+                            <tr>
+                                <td class="column1">1</td>
+                                <td class="column2">200398</td>
+                                <td class="column3">Ahmad</td>
+                                <td class="column4">Kassim</td>
+                                <td class="column5">Male</td>
+                                <td class="column6">23/4/2091</td>
+                                <td class="column7">0146985321</td>
+                                <td class="column8">Sungai Buloh taman hang tuah jaya di melaka sleatan mencuba menjadi
+                                    sesuatu</td>
+                            </tr>
+                            <tr>
+                                <td class="column1">1</td>
+                                <td class="column2">200398</td>
+                                <td class="column3">Ahmad</td>
+                                <td class="column4">Kassim</td>
+                                <td class="column5">Male</td>
+                                <td class="column6">23/4/2091</td>
+                                <td class="column7">0146985321</td>
+                                <td class="column8">Sungai Buloh taman hang tuah jaya di melaka sleatan mencuba menjadi
+                                    sesuatu</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
