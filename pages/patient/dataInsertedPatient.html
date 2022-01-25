@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Data Result</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100%;
+            font-family: sans-serif;
+            background: #ffccd2;
+        }
+
+
+        .container-table {
+            width: 100%;
+
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 33px 30px;
+        }
+
+        .wrap-table {
+            width: 1170px;
+        }
+
+        table {
+            border-spacing: 1;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        table * {
+            position: relative;
+        }
+
+
+        table thead tr {
+            background: #36304a;
+        }
+
+        table tbody tr {
+            height: 50px;
+        }
+
+        table tbody tr:last-child {
+            border: 0;
+        }
+
+        table td,
+        table th {
+            text-align: center;
+        }
+
+
+
+        .table-head th {
+            font-family: OpenSans-Regular;
+            font-size: 18px;
+            color: #fff;
+            line-height: 1.2;
+            font-weight: unset;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        tbody tr {
+            font-family: OpenSans-Regular;
+            font-size: 15px;
+            color: #808080;
+            line-height: 1.2;
+            font-weight: unset;
+        }
+
+        .column1 {
+            width: 100px;
+            padding:  40px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <p style="text-align: center; color: black; font-size: 30px; margin-top: 30px;">PATIENT TABLE</p>
+    </div>
+    <div class="limiter">
+        <div class="container-table">
+            <div class="wrap-table">
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr class="table-head">
+                                <th class="column1">Data inserted successfully</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="column1">
+                                    <button type=button onclick="window.location.href='patientRegister.html'"
+                                     style="cursor: pointer; font-style: OpenSans-Regular; background-color:#ffccd2; color:#000000 ;border-radius: 10px; width: 70px; height: 30px; border-width: px;font-weight:bold;">
+                                    BACK </button>
+                                </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
