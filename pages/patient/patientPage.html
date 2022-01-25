@@ -5,19 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Option</title>
+    <title>Patient Page</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab:wght@500&display=swap');
-
-
-        :root {
-            --light-pink: ;
-            --peach:  #ffccd2;
-            --light-brown: #B3541E;
-            --dark-brown: #362222;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
-        body, html {
+
+        body,
+        html {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+                Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
             margin: 0;
             padding: 0;
             height: 100%;
@@ -25,137 +24,131 @@
 
         }
 
-        .container {
-            background-color: #030303;
+        .main-container {
+            padding: 30px;
+            background-color: black;
             margin: auto;
             margin-top: 0;
+            width: 700px;
+            height: 100%;
+        }
+
+        /* HEADING */
+
+        .heading {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .heading__title {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* CARDS */
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .card {
+            margin: 20px;
+            padding: 20px;
             width: 500px;
-            height: 100%;
-            /* padding: 20px; */
-
+            min-height: 200px;
+            border-radius: 10px;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+            transition: all 0.2s;
         }
 
-        .container p {
-            margin-bottom: 50px;
-            margin-top: 0;
-            padding-top: 100px;
-            color: var(--peach);
-            text-transform: uppercase;
-            font-weight: bold;
-            font-family: sans-serif;
-            letter-spacing: 0.1em;
-            text-align: center;
-            font-size: 20px;
+        .card:hover {
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+            transform: scale(1.01);
         }
 
-        div.btn-option {
-            margin-top: 80px;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: auto;
-            margin-bottom: 2em;
-            --c: var(--peach);
-            color: var(--c);
-            font-size: 14px;
-            border: 0.3em solid var(--c);
-            border-radius: 0.5em;
-            width: 10em;
-            height: 3em;
-            text-transform: uppercase;
-            font-weight: bold;
-            font-family: sans-serif;
-            letter-spacing: 0.1em;
-            text-align: center;
-            line-height: 3em;
+        .card__link {
             position: relative;
-            overflow: hidden;
-            z-index: 1;
-            transition: 0.5s;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.9);
         }
 
-        nav ul li span {
+        .card__link::after {
             position: absolute;
-            width: 25%;
-            height: 100%;
-            background-color: var(--c);
-            transform: translateY(150%);
-            border-radius: 50%;
-            left: calc((var(--n) - 1) * 25%);
-            transition: 0.5s;
-            transition-delay: calc((var(--n) - 1) * 0.1s);
-            z-index: -1;
+            top: 25px;
+            left: 0;
+            content: "";
+            width: 0%;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.6);
+            transition: all 0.5s;
         }
 
-        nav ul li:hover {
-            color: black;
+        .card__link:hover::after {
+            width: 100%;
         }
 
-        nav ul li:hover span {
-            transform: translateY(0) scale(2);
+
+        .card-1 {
+            background: radial-gradient(#1fe4f5, #3fbafe);
         }
 
-        nav ul li span:nth-child(1) {
-            --n: 1;
+        .card-2 {
+            background: radial-gradient(#fbc1cc, #fa99b2);
         }
 
-        nav ul li span:nth-child(2) {
-            --n: 2;
+        .card-3 {
+            background: radial-gradient(#76b2fe, #b69efe);
         }
 
-        nav ul li span:nth-child(3) {
-            --n: 3;
+        .card-4 {
+            background: radial-gradient(#60efbc, #58d5c9);
         }
 
-        nav ul li span:nth-child(4) {
-            --n: 4;
+        .card-5 {
+            background: radial-gradient(#f588d8, #c0a3e5);
         }
 
+        /* RESPONSIVE */
+
+        @media (max-width: 1600px) {
+            .cards {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <p>Patient option</p>
-        <div class="btn-option">
-            <nav >
-                <ul>
-                    <a href="/web-soma/pages/patient/patientRegister.html">
-                        <li>
-                            insert
-                            <span></span><span></span><span></span><span></span>
-                        </li>
-                    </a>
-                    <a href="wardRegister.html">
-                        <li>
-                            delete
-                            <span></span><span></span><span></span><span></span>
-                        </li>
-                    </a>
-                    <a href="bedRegister.html">
-                        <li>
-                            view
-                            <span></span><span></span><span></span><span></span>
-                        </li>
-                    </a>
-                     <a href="/web-soma/pages/registerPage.html">
-                        <li>
-                             back
-                            <span></span><span></span><span></span><span></span>
-                        </li>
-                    </a>
-                </ul>
-            </nav>
+
+    <div class="main-container">
+        <div class="heading">
+            <h1 class="heading__title">Patient Page</h1>
+        </div>
+        <div class="cards">
+            <a class="card_link" href="patientRegister.html" style="text-decoration: none;">
+                <div class="card card-1">
+                    <div style="width: 300px; margin: auto; text-align: center; margin-top: 60px;">
+                        <img src="/assets/insert.png" alt="" style="height: 50px; vertical-align: middle;">
+                        <span style="font-weight: 400; font-size: 30px; color: white;">INSERT PATIENT</span>
+                    </div>
+
+
+                </div>
+            </a>
+
+            <a class="card_link" href="patientView&Delete.html" style="text-decoration: none;">
+                <div class="card card-2">
+                    <div style="width: 300px; margin: auto; text-align: center; margin-top: 60px;">
+                        <img src="/assets/view.png" alt="" style="height: 50px; vertical-align: middle;">
+                        <span style="font-weight: 400; font-size: 30px; color: white;">VIEW PATIENT</span>
+                    </div>
+
+
+                </div>
+            </a>
+
         </div>
     </div>
 </body>
